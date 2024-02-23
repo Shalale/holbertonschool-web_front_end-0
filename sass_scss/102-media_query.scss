@@ -3,25 +3,8 @@ h1 {
     font-size: 20px;
   }
   
-  @media (max-width: 960px) {
-    h1 {
-      font-size: 18px;
+  @for $i from 1 through 3 {
+    @media (max-width: calc(1300px - #{$i} * 320px)) { 
+        font-size: calc(20px - #{$i} * 2px);
     }
-  }
-  
-  @media (max-width: 640px) {
-    h1 {
-      font-size: 16px;
-    }
-  }
-  
-  @media (max-width: 320px) {
-    h1 {
-      font-size: 14px;
-    }
-  
-    h1.small {
-      color: #1D1D1D;
-    }
-  }
-  
+}
