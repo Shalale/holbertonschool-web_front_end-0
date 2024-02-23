@@ -1,10 +1,15 @@
 //media query
+$h1-normal-size: 20px;
+$h1-sscreen-size: 14px;
+$small-screen: 320px;
+
+
 h1 {
-    font-size: 20px;
+    font-size: $h1-normal-size
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: $small-screen) {
     h1 {
-        font-size: 14px;
+        font-size: $h1-sscreen-size
     }
 }
