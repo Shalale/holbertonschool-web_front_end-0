@@ -1,0 +1,24 @@
+//sorting
+$list_to_sort: john, anna, zoe, kim, felicia, carrie;
+@function bubble-sort($list) {
+  $n: length($list);
+  $sorted_list: $list;
+
+  @for $i from 1 through $n {
+    @for $j from 1 through ($n - $i) {
+      $current: nth($sorted_list, $j);
+      $next: nth($sorted_list, $j + 1);
+
+      @if $current > $next {
+        $sorted_list: set-nth($sorted_list, $j, $next);
+        $sorted_list: set-nth($sorted_list, $j + 1, $current);
+      }
+    }
+  }
+
+  @return $sorted_list;
+}
+
+$sorted_list: bubble-sort($list_to_sort);
+
+@debug $sorted_list;
