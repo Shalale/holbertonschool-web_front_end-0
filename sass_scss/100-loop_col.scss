@@ -1,6 +1,8 @@
 //columns and operations
-@for $i from 1 through 4 {
+$columns: 4;
+
+@for $i from 1 through $columns {
   .col-#{$i} {
-    width: calc(100% / #{$i});
+    width: percentage(1/$i);
   }
 }
